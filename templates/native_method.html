@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .info {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<a href="https://www.github.com", >www.honor.com</a>
+  <div class="info" id="info"></div>
+  <script>
+
+    window.onload = function() {
+      if (window.__windvane__) {
+        alert("test");
+        window.__windvane__.onSuccess = function(callbackFunction, data) {
+          alert("data " + JSON.stringify(data));
+        } 
+      }
+    }
+  
+    function MyCallback(callbackId, eventType, data) {
+        alert("data " + JSON.stringify(data));
+    }
+
+    let test_json = JSON.stringify({
+        "callbackId": "123",
+        "eventType": "123",
+        "data": "123",
+        "phoneNum": "15510008620",
+    });
+    //window.Native.nativeMethod("com.hihonor.hm.h5.container.js.method.DeviceMethods", "getAppDeviceInfo", test_json, "1", "MyCallback");
+    //window.Native.nativeMethod("com.hihonor.wallet.business.loan.core.WalletLoanJSImpl", "callPhone", test_json, "1", "MyCallback");
+    //alert(vmallAndroid.getExtraInfo());
+
+    var params = {
+        // 是否获取高精度的位置
+        enableHighAccuracy: true,
+        // 是否获取地址描述
+        address: true
+};
+
+function successCallback(e) {
+    alert('success:' + JSON.stringify(e));
+}
+function failureCallback(e) {
+    alert('failure:' + JSON.stringify(e));
+}
+// window.__windvane__.nativeCall('WVLocation.getLocation', JSON.stringify(params), "successCallback", "failureCallback");
+
+
+// write file
+var file_params = {
+  "mode": "overwrite",
+  "data": "123",
+  "fileName": "test.txt",
+  "share": true,
+}
+//window.__windvane__.nativeCall('WVFile.write', JSON.stringify(file_params), "successCallback", "failureCallback");
+
+
+// upload file
+document.addEventListener('WVFile.Event.uploadFileSuccess', function (e) {
+        alert('event uploadFileSuccess: ' + JSON.stringify(e.param));
+});
+document.addEventListener('WVFile.Event.uploadFileFailed', function (e) {
+        alert('event uploadFileFailed: ' + JSON.stringify(e.param));
+});
+
+var upload_params = {
+    url: 'http://192.168.200.178/upload',
+  	filePath: '/storage/DCIM/Camera/IMG_20250224_185826.jpg',
+    timeout: 8000,
+
+};
+
+var cookie_params = {
+  url : "www.youku.com",
+}
+
+window.__windvane__.nativeCall('WVCookie.readCookies', JSON.stringify(cookie_params), "successCallback", "failureCallback");
+
+// jieping
+// var jieping_params = {
+//   inAlbum: true
+// };
+// window.__windvane__.nativeCall('WVScreen.capture', JSON.stringify(jieping_params), "successCallback", "failureCallback");
+
+
+
+// call phone
+// var call_phone_params = {
+//   phone: "10086"
+// };
+// window.__windvane__.nativeCall('WVCall.dial', JSON.stringify(call_phone_params), "successCallback", "failureCallback");
+
+
+// var notification_params = {
+//   count: "10"
+// }
+// window.__windvane__.nativeCall('WVNotification.beep', JSON.stringify(notification_params), "successCallback", "failureCallback");
+
+// blue_tooth_params
+// var blue_tooth_params = {
+//   deviceId: "123",
+//   serviceId: "123",
+// }
+// window.__windvane__.nativeCall('WVBluetooth.writeValue', JSON.stringify(blue_tooth_params), "successCallback", "failureCallback");
+</script>
+
+</body>
+</html>

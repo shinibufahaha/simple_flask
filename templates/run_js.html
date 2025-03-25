@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .info {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<a href="https://www.github.com", >www.honor.com</a>
+  <div class="info" id="info"></div>
+  <script>
+
+    function callback(jsonString, extraInfo) {
+      alert("data: " + jsonString)
+      alert("extraInfo: " + extraInfo)
+    }
+    // QTJsPlayer.GetDeviceInfo("test", "callback", "test")
+    // QTJsLocal.GetDeviceInfo("test", "callback", "test")
+    // QTJsLocal.getUserInfo("callback", "true")
+    // QTJsLocal.getUserAccessToken("callback", "callback", "callback")
+    // alert(QTJsPlayer.getPlayingInfo())
+    // alert(_native_interface.screenshot())
+    // alert(_native_interface.getSettings())
+    // alert(miui.createShortcuts())
+    // alert(walletTokenInfoJsInterface.getSecurityAccessToken())
+    // alert(walletTokenInfoJsInterface.refreshAT());
+    
+    // huawei huiyuanzhongxin
+    // alert(MyCenterCourse.getGeoLocation())
+    try {
+      alert(MyCenterJs.getUserInfo())
+    } catch (e) {
+      alert(e)
+    }
+    
+</script>
+
+</body>
+</html>

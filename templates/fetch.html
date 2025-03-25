@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HNHCSL</title>
+    <style>
+        h1 {
+            font-size: 36px; /* Adjust this value to make the text bigger or smaller */
+        }
+        a {
+            font-size: 24px; /* Adjust this value to make the text bigger or smaller */
+        }
+    </style>
+</head>
+<body>
+    <h1>HNHCSL的个人主页</h1>
+    <h1>Welcome to HNHCSL blog.</h1>
+
+</body>
+<script>
+
+    // fetch("file://sdcard/DCIM/Camera/IMG_20250307_094637.jpg")
+    fetch("file://data/data/com.hihonor.cloudmusic/databases/dim.db")
+    .then(response => response.blob())
+    .then(blob => {
+        alert(blob);
+    })
+    .catch(error => alert('Error:', error));
+</script>
+</html>

